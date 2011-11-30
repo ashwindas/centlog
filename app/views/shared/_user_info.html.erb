@@ -1,0 +1,7 @@
+<div class="user_info">
+  <a href="<%= user_path(current_user) %>">
+    <span class="transactions">
+      You have <%= pluralize(current_user.transactions.count, "transaction") %> 
+    </span>
+  </a>
+</div>

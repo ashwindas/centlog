@@ -1,0 +1,106 @@
+<div class="row show-grid">
+	<div class="span6">
+		<h1> <%= @group.name %> </h1>
+	</div>
+	<div class="span10">
+		<% if current_user.id == @group.owner_id %>
+
+		<%= link_to 'Edit this group', edit_group_path(@group) %>
+		<%= link_to 'Delete this group', @group, :confirm => 'Are you sure? This cannot be undone', :method => :delete %>
+
+		<%else%>
+
+		<% if @group.users.include?(current_user) %>
+
+		<%= form_tag @group, :method => 'post' do %>
+		<%= hidden_field_tag(:leave, current_user.id) %>
+		<%= submit_tag "Leave this group", :name => nil, :class => "btn primary medium" %>
+		<% end %>
+
+		<%else%>
+
+		<%= form_tag @group, :method => 'get' do %>
+		<%= hidden_field_tag(:join, current_user.id) %>
+		<%= submit_tag "Join this group", :name => nil, :class => "btn primary medium" %>
+		<% end %>
+
+		<%end%>
+
+		<% end %>
+	</div>
+</div>
+<div class="row show-grid">
+	<div class="span12">
+		<p>
+			<b>Description:</b>
+			<%= @group.description %>
+		</p>
+		<p>
+			<b>Owner:</b>
+			<% if current_user.id == @group.owner_id %>
+			You are the owner of this group!
+			<%else%>
+			<%= User.find(@group.owner_id).email %>
+			<% end %>
+			<br/>
+		</p>
+	</div>
+	<div class="span4">
+		<h4> Members: </h4>
+		<ol>
+			<% @members.each do |member| %>
+			<li>
+				<%= member.email %>
+			</li>
+			<% end %>
+		</ol>
+	</div>
+</div>
+<% if current_user.id == @group.owner_id %> <h4>Add a member</h4>
+<%= form_tag @group, :method => 'get' do %>
+<%= email_field_tag :new_user_email, params[:new_user_email] %>
+<%= submit_tag "Add", :name => nil, :class => "btn primary small" %>
+<% end %>
+<% end %>
+<hr/>
+<h3>This Group's expenses<small> Showing <%= @transactions.size%> expenses from <%= pluralize(@members.size + 1 , 'member') %> <small></h3>
+	<h4> Total expenditure : <%= number_to_currency(@total, :unit => "$") %></h4>
+	<br/>
+<div class="row show-grid">
+	<div class="span16">
+		<script >
+			$(document).ready(function() {
+				$("#expense_table").tablesorter({
+					sortList : [[3, 1]]
+				});
+			});
+		</script>
+		<table class="zebra-striped" id="expense_table">
+			<thead>
+				<tr>
+					<th>Member</th>
+					<th>Description</th>
+					<th>Amount</th>
+					<th>Date</th>
+					<th>Location</th>
+					<th>Tag</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @transactions_paginated.each do |transaction| %>
+				<tr>
+					<td><%= User.find(transaction.user_id).email %></td>
+					<td><%= link_to transaction.description, transaction %> (<%= link_to 'Edit', edit_transaction_path(transaction) %>)</td>
+					<td><%= link_to number_to_currency(transaction.amount, :unit => "$"), transaction %></td>
+					<td><%= transaction.date %></td>
+					<td><%= transaction.location %></td>
+					<td><%= transaction.tag %></td>
+					<td><%= link_to 'Delete', transaction, :confirm => 'Are you sure?', :method => :delete %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<%= will_paginate @transactions_paginated %>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+
+<tr>
+  <td class="transaction">
+  	<% if !current_user?(feed_item.user) %>
+    <div>
+       <b><%= link_to feed_item.user.first_name, feed_item.user %></b><br /> 
+    </div>  
+    Spent <%= feed_item.amount %> at <%= feed_item.location %> on <%= feed_item.tag %><br	 />
+    <span class="timestamp">
+      <i>Expense incurred <%= time_ago_in_words(feed_item.created_at) %> ago.</i>
+    </span>
+     <% end %>
+  </td>
+</tr>

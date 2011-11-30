@@ -1,0 +1,20 @@
+<h1>Groups</h1>
+<table class="zebra-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Owner</th>
+	</tr>
+	<% @groups.each do |group| %>
+	<tr>
+		<td> <%= link_to group.name, group %>
+		<% if current_user.id == group.owner_id %>
+		<%= link_to '(Edit)', edit_group_path(group) %>
+		<% end %> </td>
+		<td><%= link_to group.description, group %></td>
+		<td><%= User.find(group.owner_id).email %></td>
+	</tr>
+	<% end %>
+</table>
+<br />
+<%= link_to 'Create a group', new_group_path,:class => "btn primary medium" %> 

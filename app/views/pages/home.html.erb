@@ -1,0 +1,77 @@
+<div class="page-header">
+	<% if user_signed_in? %> <h1> Hi <%= current_user.first_name%>! <small>Welcome to your one stop expense tracker.</small></h1>
+	<%= render 'shared/user_info' %>
+	<%= render 'shared/stats' %>
+	<%= render 'shared/feed' %>
+	<%else%> <h1> CentLog <small>A one stop expense tracker.</small></h1>
+	<%end%>
+</div>
+<div class="row">
+	<div class="span12">
+		<% if user_signed_in? %>
+		<%else%>
+		<div id="slideshow">
+			<div id="slidesContainer">
+				<div class="slide">
+					<h2>Welcome to CentLog</h2>
+					<p>
+						<%= image_tag "1.jpg", :alt => 'Not found' %>
+					</p>
+					<p>
+						If you are looking to control/track your expenses efficiently, you are at the right place. CentLog enables
+						you to track not just your personal expenses, but also expenses of a group.
+					</p>
+				</div>
+				<div class="slide">
+					<h2>I remember now!</h2>
+					<p>
+						<%= image_tag "2.jpg", :alt => 'Not found' %>
+					</p>
+					<p>
+						An effective alert mechanism keeps the user updated about the expenses that he has incurred.
+						If there is an expense that a user has settled, he can delete it from the list.
+					</p>
+				</div>
+				<div class="slide">
+					<h2>Break-up using charts</h2>
+					<p>
+						<%= image_tag "chart.jpg", :alt => 'Not found' %>
+					</p>
+					<p>
+						One of the most attractive features of this website is the depiction of expenses over a time period
+						in the form of charts. A categorized break-up is provided.
+					</p>
+				</div>
+				<div class="slide">
+					<h2>Groups</h2>
+					<p>
+						<%= image_tag "798_money1.jpg", :alt => 'Not found' %>
+					</p>
+					<p>
+						Groups is another useful feature that the website provides. Shared bills can be entered.
+						A user can track expenses of a group and also follow other users to determine how much
+						each of them is spending in every category.
+					</p>
+				</div>
+			</div>
+		</div>
+		<%end%>
+	</div>
+	<div class="span4">
+		<br/>
+		<% if user_signed_in? %>
+		<%else%>
+		<div class="well" style="background-color: #688; border: none;width: 230px ">
+			<div>
+				<%= form_for("user", :url => user_session_path) do |f| %>
+				<%= f.label :email %><%= f.email_field :email %>
+				<%= f.label :password %>
+				<%= f.password_field :password %>
+				<%= f.submit "Sign in",:class => "btn primary medium" %>
+			</div>
+			<% end %> <h5>Not yet a member?</h5> <%= link_to "Register now >>", new_user_registration_path,:class => "btn primary medium" %>
+		</div>
+		<br/>
+		<%end%>
+	</div>
+</div>

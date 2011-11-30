@@ -1,0 +1,43 @@
+<% if user_signed_in? %>
+<div class="sidebar">
+	<div class="well">
+		<h5>Groups</h5>
+		<ul>
+			<li>
+				<a href="/groups">All groups</a>
+			</li>
+			<li>
+				<a href="/mygroups">My groups</a>
+			</li>
+			<li>
+				<a href="/groups/new">Create a new group</a>
+			</li>
+		</ul>
+		<h5>Expenses</h5>
+		<ul>
+			<li>
+				<a href="/transactions">My expenses</a>
+			</li>
+			<li>
+				<a href="/transactions/new">Add a new expense</a>
+			</li>
+		</ul>
+		<h5>Alert</h5>
+		<ul>
+			<li>
+				<a href="/alerts">All alerts</a>
+			</li>
+			<li>
+				<a href="/alerts/new">Add an alert</a>
+			</li>
+		</ul>
+		<h5>Members</h5>
+		<ul>
+			<li>
+				<a href="/users">List members</a>
+			</li>
+		</ul>
+		
+	</div>
+</div>
+<%end%> 

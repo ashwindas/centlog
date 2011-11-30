@@ -1,0 +1,6 @@
+<% unless  current_user.feed.empty? %> 
+<b>Transaction status feed:</b>
+<table class="transactions" summary="User transactions">
+	<%= render :partial => 'shared/feed_item', :collection =>  current_user.feed%>
+</table>
+<% end %> 

@@ -1,0 +1,17 @@
+<h2><%= @transaction.description %></h2> (<%= link_to 'Edit expense', edit_transaction_path(@transaction) %>)
+<h4 style="color:#007513;"><%= number_to_currency(@transaction.amount, :unit => "$") %></h4>
+<br/>
+<p>
+	<b>Date:</b>
+	<%= @transaction.date %>
+</p>
+<p>
+	<b>Location:</b>
+	<%= @transaction.location %>
+</p>
+<p>
+	<b>Tag:</b>
+	<%= @transaction.tag %>
+</p>
+
+<%= link_to 'My expenses', transactions_path %>

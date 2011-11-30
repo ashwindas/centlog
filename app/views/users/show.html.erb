@@ -1,0 +1,14 @@
+<p id="notice">
+	<%= notice %>
+</p>
+<div class="row show-grid" title="Half and half">
+	<div class="span8">
+		<p>
+			<%= link_to @user.email, @user %>
+		</p>
+	</div>
+	<div class="span8">
+		<%= render 'follow_form' if signed_in? %>
+		<%= render 'shared/stats' %>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<h2>Manage your alerts <small> Add new alerts, edit or remove existing alerts</small></h2>
+<table id="alert_table">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Amount</th>
+			<th>Date</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @alerts.each do |alert| %>
+		<tr>
+			<td><%= link_to alert.title, alert %>(<%= link_to 'Edit', edit_alert_path(alert) %>)</td>
+			<td><%= link_to alert.amount, alert %></td>
+			<td><%= link_to alert.date, alert %></td>
+			<td><%= link_to 'Remove alert', alert, :method => :delete %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<br />
+<%= link_to 'Add an alert', new_alert_path, :class => "btn primary medium"  %> 
