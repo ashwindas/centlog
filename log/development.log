@@ -59605,3 +59605,739 @@ ActionController::RoutingError (No route matches "/images/favicon.ico"):
   
 
 Rendered /home/ashwin/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/ashwin/Dropbox/Courses/WebAppDev/centlog_repo/centlog/config/environment.rb:5)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2011-11-30 02:55:00 -0500
+  Processing by TransactionsController#new as HTML
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (4.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTransaction Load (0.4ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE ("transactions".user_id = 1) ORDER BY transactions.date DESC[0m
+Rendered transactions/_form.html.erb (278.6ms)
+Rendered shared/_header.html.erb (3.9ms)
+Rendered devise/menu/_registration_items.html.erb (1.1ms)
+Rendered devise/menu/_login_items.html.erb (1.5ms)
+Rendered shared/_topbar.html.erb (8.4ms)
+Rendered shared/_side_bar.html.erb (0.7ms)
+Rendered shared/_notice_messages.html.erb (1.0ms)
+Rendered shared/_footer.html.erb (2.2ms)
+Rendered transactions/new.html.erb within layouts/application (311.4ms)
+Completed 200 OK in 505ms (Views: 320.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/transactions/images/favicon.ico" for 127.0.0.1 at 2011-11-30 02:55:02 -0500
+
+ActionController::RoutingError (No route matches "/transactions/images/favicon.ico"):
+  
+
+Rendered /home/ashwin/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started POST "/transactions" for 127.0.0.1 at 2011-11-30 02:55:36 -0500
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t+R8XwWWfXGsQ/ApnKZry/GvmxtEfxouC104M7XUD1g=", "transaction"=>{"user_id"=>"1", "description"=>"<script>alert('Hello');</script>", "amount"=>"100", "tag"=>"Internet/Cable TV", "location"=>"PA", "date(1i)"=>"2011", "date(2i)"=>"11", "date(3i)"=>"30"}, "commit"=>"Done"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+WARNING: Can't mass-assign protected attributes: location
+  [1m[36mAREL (2.9ms)[0m  [1mINSERT INTO "transactions" ("user_id", "amount", "date", "location", "description", "tag", "created_at", "updated_at") VALUES (1, 100.0, '2011-11-30', NULL, '<script>alert(''Hello'');</script>', 'Internet/Cable TV', '2011-11-30 07:55:37.080988', '2011-11-30 07:55:37.080988')[0m
+Redirected to http://localhost:3000/transactions/10
+Completed 302 Found in 346ms
+
+
+Started GET "/transactions/10" for 127.0.0.1 at 2011-11-30 02:55:37 -0500
+  Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (2.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTransaction Load (0.5ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 10 ORDER BY transactions.date DESC LIMIT 1[0m
+Rendered shared/_header.html.erb (4.4ms)
+Rendered devise/menu/_registration_items.html.erb (2.2ms)
+Rendered devise/menu/_login_items.html.erb (1.3ms)
+Rendered shared/_topbar.html.erb (9.8ms)
+Rendered shared/_side_bar.html.erb (0.7ms)
+Rendered shared/_notice_messages.html.erb (1.1ms)
+Rendered shared/_footer.html.erb (1.3ms)
+Rendered transactions/show.html.erb within layouts/application (57.0ms)
+Completed 200 OK in 291ms (Views: 66.5ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/transactions/images/favicon.ico" for 127.0.0.1 at 2011-11-30 02:55:38 -0500
+
+ActionController::RoutingError (No route matches "/transactions/images/favicon.ico"):
+  
+
+Rendered /home/ashwin/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/transactions/10" for 127.0.0.1 at 2011-11-30 02:55:43 -0500
+  Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTransaction Load (0.5ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 10 ORDER BY transactions.date DESC LIMIT 1[0m
+Rendered shared/_header.html.erb (3.7ms)
+Rendered devise/menu/_registration_items.html.erb (1.2ms)
+Rendered devise/menu/_login_items.html.erb (1.3ms)
+Rendered shared/_topbar.html.erb (6.0ms)
+Rendered shared/_side_bar.html.erb (0.8ms)
+Rendered shared/_notice_messages.html.erb (1.2ms)
+Rendered shared/_footer.html.erb (1.3ms)
+Rendered transactions/show.html.erb within layouts/application (84.2ms)
+Completed 200 OK in 318ms (Views: 92.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/transactions/images/favicon.ico" for 127.0.0.1 at 2011-11-30 02:55:44 -0500
+
+ActionController::RoutingError (No route matches "/transactions/images/favicon.ico"):
+  
+
+Rendered /home/ashwin/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-30 02:55:50 -0500
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlert Load (0.4ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE ("alerts".user_id = 1)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "transactions" WHERE ("transactions".user_id = 1)
+Rendered shared/_user_info.html.erb (32.9ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 1))[0m
+  [1m[35mSQL (1.7ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 1))
+Rendered shared/_stats.html.erb (56.2ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "transactions" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 1))[0m
+Rendered shared/_feed.html.erb (4.8ms)
+Rendered shared/_header.html.erb (7.9ms)
+Rendered devise/menu/_registration_items.html.erb (1.3ms)
+Rendered devise/menu/_login_items.html.erb (1.3ms)
+Rendered shared/_topbar.html.erb (9.5ms)
+Rendered shared/_side_bar.html.erb (0.9ms)
+Rendered shared/_notice_messages.html.erb (1.8ms)
+Rendered shared/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (142.2ms)
+Completed 200 OK in 467ms (Views: 153.0ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2011-11-30 02:55:51 -0500
+
+ActionController::RoutingError (No route matches "/images/favicon.ico"):
+  
+
+Rendered /home/ashwin/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/alerts" for 127.0.0.1 at 2011-11-30 02:55:55 -0500
+  Processing by AlertsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlert Load (0.4ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE ("alerts".user_id = 1)[0m
+Rendered shared/_header.html.erb (6.3ms)
+Rendered devise/menu/_registration_items.html.erb (1.2ms)
+Rendered devise/menu/_login_items.html.erb (1.4ms)
+Rendered shared/_topbar.html.erb (9.4ms)
+Rendered shared/_side_bar.html.erb (0.8ms)
+Rendered shared/_notice_messages.html.erb (1.0ms)
+Rendered shared/_footer.html.erb (1.1ms)
+Rendered alerts/index.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 258ms (Views: 65.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2011-11-30 02:55:56 -0500
+
+ActionController::RoutingError (No route matches "/images/favicon.ico"):
+  
+
+Rendered /home/ashwin/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2011-11-30 02:55:56 -0500
+  Processing by TransactionsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTransaction Load (0.6ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE ("transactions".user_id = 1) ORDER BY transactions.date DESC[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT SUM("transactions"."amount") AS sum_id FROM "transactions" WHERE ("transactions".user_id = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT SUM("transactions"."amount") AS sum_id FROM "transactions" WHERE ("transactions".user_id = 1) AND (tag = 'Internet/Cable TV')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT SUM("transactions"."amount") AS sum_id FROM "transactions" WHERE ("transactions".user_id = 1) AND (tag = 'Gadgets')
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_transactions_index_html_erb__3588773516777256754_21010600_3255159199170113459 at /home/ashwin/Dropbox/Courses/WebAppDev/centlog_repo/centlog/app/views/transactions/index.html.erb:1)
+Rendered shared/_header.html.erb (4.2ms)
+Rendered devise/menu/_registration_items.html.erb (1.1ms)
+Rendered devise/menu/_login_items.html.erb (1.3ms)
+Rendered shared/_topbar.html.erb (6.5ms)
+Rendered shared/_side_bar.html.erb (0.8ms)
+Rendered shared/_notice_messages.html.erb (2.3ms)
+Rendered shared/_footer.html.erb (1.0ms)
+Rendered transactions/index.html.erb within layouts/application (90.0ms)
+Completed 200 OK in 279ms (Views: 97.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2011-11-30 02:55:57 -0500
+
+ActionController::RoutingError (No route matches "/images/favicon.ico"):
+  
+
+Rendered /home/ashwin/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (9.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/ashwin/Dropbox/Courses/WebAppDev/centlog_repo/centlog/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/ashwin/Dropbox/Courses/WebAppDev/centlog_repo/centlog/config/environment.rb:5)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (206.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (31.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20111113233042)
+  [1m[36mSQL (2.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[35mSQL (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111113233042')[0m
+Migrating to AddFirstnameLastnameToUsers (20111117150033)
+  [1m[35mSQL (0.6ms)[0m  ALTER TABLE "users" ADD "first_name" varchar(255)
+  [1m[36mSQL (0.3ms)[0m  [1mALTER TABLE "users" ADD "last_name" varchar(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111117150033')
+Migrating to CreateGroups (20111119182107)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "owner_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111119182107')
+Migrating to AddGroupsUsersJoinTable (20111119182444)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "groups_users" ("group_id" integer, "user_id" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111119182444')
+Migrating to AddGroupNameUniquenessIndex (20111119182535)
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("groups")[0m
+  [1m[35mSQL (0.5ms)[0m  CREATE UNIQUE INDEX "index_groups_on_name" ON "groups" ("name")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111119182535')[0m
+Migrating to CreateTransactions (20111124000154)
+  [1m[35mSQL (0.6ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "amount" float, "date" date, "location" varchar(255), "description" varchar(255), "tag" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("transactions")[0m
+  [1m[35mSQL (0.3ms)[0m  CREATE INDEX "index_transactions_on_user_id_and_date" ON "transactions" ("user_id", "date")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111124000154')[0m
+Migrating to CreateAlerts (20111128070654)
+  [1m[35mSQL (3.2ms)[0m  CREATE TABLE "alerts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "amount" float, "date" date, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111128070654')[0m
+Migrating to AddUserIdToAlerts (20111128071320)
+  [1m[35mSQL (0.9ms)[0m  ALTER TABLE "alerts" ADD "user_id" integer
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111128071320')[0m
+Migrating to CreateRelationships (20111129053946)
+  [1m[35mSQL (0.5ms)[0m  CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.3ms)[0m  CREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_follower_id')
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE INDEX "index_relationships_on_followed_id" ON "relationships" ("followed_id")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_follower_id')
+  [1m[36mSQL (2.0ms)[0m  [1mCREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followed_id" ON "relationships" ("follower_id", "followed_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111129053946')
+Migrating to AddConfirmableToDevise (20111130080826)
+  [1m[36mSQL (0.2ms)[0m  [1mALTER TABLE "users" ADD "confirmation_token" varchar(255)[0m
+SQLite3::SQLException: duplicate column name: confirmation_token: ALTER TABLE "users" ADD "confirmation_token" varchar(255)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/ashwin/Dropbox/Courses/WebAppDev/centlog_repo/centlog/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-30 03:12:48 -0500
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered shared/_header.html.erb (6.0ms)
+Rendered devise/menu/_registration_items.html.erb (2.2ms)
+Rendered devise/menu/_login_items.html.erb (1.3ms)
+Rendered shared/_topbar.html.erb (11.7ms)
+Rendered shared/_side_bar.html.erb (1.9ms)
+Rendered shared/_notice_messages.html.erb (1.0ms)
+Rendered shared/_footer.html.erb (2.9ms)
+Rendered pages/home.html.erb within layouts/application (456.9ms)
+Completed 200 OK in 653ms (Views: 619.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2011-11-30 03:12:51 -0500
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.9ms)
+Rendered shared/_header.html.erb (10.3ms)
+Rendered devise/menu/_registration_items.html.erb (1.5ms)
+Rendered devise/menu/_login_items.html.erb (7.0ms)
+Rendered shared/_topbar.html.erb (16.0ms)
+Rendered shared/_side_bar.html.erb (4.7ms)
+Rendered shared/_notice_messages.html.erb (1.1ms)
+Rendered shared/_footer.html.erb (4.6ms)
+Rendered devise/registrations/new.html.erb within layouts/application (103.8ms)
+Completed 200 OK in 358ms (Views: 214.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/favicon.ico" for 127.0.0.1 at 2011-11-30 03:12:53 -0500
+
+ActionController::RoutingError (No route matches "/users/images/favicon.ico"):
+  
+
+Rendered /home/ashwin/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/users/images/favicon.ico" for 127.0.0.1 at 2011-11-30 03:12:54 -0500
+
+ActionController::RoutingError (No route matches "/users/images/favicon.ico"):
+  
+
+Rendered /home/ashwin/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-11-30 03:13:09 -0500
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/SRNDoLRNUrbUKqv8eGwjbyCdj29hj7fF6s6de6K9Ww=", "user"=>{"first_name"=>"Ashwin", "last_name"=>"Das", "email"=>"ashwindascg@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'ashwindascg@gmail.com') LIMIT 1[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'H7WHfdnH4PjeuwGNi6CJ' LIMIT 1
+  [1m[36mAREL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at", "first_name", "last_name") VALUES ('ashwindascg@gmail.com', '$2a$10$JA5.slpSrNqvsEtHW78zJeGIVqeSiZ68xE5vk3mfy9qxACHxUtI0G', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 'H7WHfdnH4PjeuwGNi6CJ', NULL, '2011-11-30 08:13:10.501811', '2011-11-30 08:13:10.501976', '2011-11-30 08:13:10.501976', 'Ashwin', 'Das')[0m
+Rendered devise/mailer/confirmation_instructions.html.erb (1.3ms)
+
+Sent mail to ashwindascg@gmail.com (4021ms)
+Date: Wed, 30 Nov 2011 03:13:14 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ashwindascg@gmail.com
+Message-ID: <4ed5e599e7602_548424000cc4473a@ashwin-ThinkPad-X301.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome ashwindascg@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=H7WHfdnH4PjeuwGNi6CJ">Confirm my account</a></p>
+Redirected to http://localhost:3000/
+Completed 302 Found in 8018ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-30 03:13:17 -0500
+  Processing by PagesController#home as HTML
+Rendered shared/_header.html.erb (4.1ms)
+Rendered devise/menu/_registration_items.html.erb (1.5ms)
+Rendered devise/menu/_login_items.html.erb (1.6ms)
+Rendered shared/_topbar.html.erb (9.4ms)
+Rendered shared/_side_bar.html.erb (1.5ms)
+Rendered shared/_notice_messages.html.erb (1.0ms)
+Rendered shared/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 79ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-30 03:16:03 -0500
+  Processing by PagesController#home as HTML
+Rendered shared/_header.html.erb (3.9ms)
+Rendered devise/menu/_registration_items.html.erb (1.3ms)
+Rendered devise/menu/_login_items.html.erb (1.3ms)
+Rendered shared/_topbar.html.erb (6.6ms)
+Rendered shared/_side_bar.html.erb (1.7ms)
+Rendered shared/_notice_messages.html.erb (1.0ms)
+Rendered shared/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (83.9ms)
+Completed 200 OK in 142ms (Views: 91.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2011-11-30 03:16:05 -0500
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.6ms)
+Rendered shared/_header.html.erb (4.0ms)
+Rendered devise/menu/_registration_items.html.erb (1.5ms)
+Rendered devise/menu/_login_items.html.erb (1.7ms)
+Rendered shared/_topbar.html.erb (9.4ms)
+Rendered shared/_side_bar.html.erb (1.4ms)
+Rendered shared/_notice_messages.html.erb (1.0ms)
+Rendered shared/_footer.html.erb (1.1ms)
+Rendered devise/registrations/new.html.erb within layouts/application (62.3ms)
+Completed 200 OK in 112ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-11-30 03:16:32 -0500
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/SRNDoLRNUrbUKqv8eGwjbyCdj29hj7fF6s6de6K9Ww=", "user"=>{"first_name"=>"Sushil", "last_name"=>"R", "email"=>"sushil.rangarajan@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'sushil.rangarajan@gmail.com') LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'tkqBbe4CRE2mvTKBq1mJ' LIMIT 1[0m
+  [1m[35mAREL (9.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at", "first_name", "last_name") VALUES ('sushil.rangarajan@gmail.com', '$2a$10$d9xWfsqjN7bb3C2zEqDImuvVC/Q/JYgCOmb7e8tz/dFr4cyHnMZue', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 'tkqBbe4CRE2mvTKBq1mJ', NULL, '2011-11-30 08:16:33.396489', '2011-11-30 08:16:33.396735', '2011-11-30 08:16:33.396735', 'Sushil', 'R')
+Rendered devise/mailer/confirmation_instructions.html.erb (6.7ms)
+
+Sent mail to sushil.rangarajan@gmail.com (1906ms)
+Date: Wed, 30 Nov 2011 03:16:33 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: sushil.rangarajan@gmail.com
+Message-ID: <4ed5e6618be25_54842655bd844861@ashwin-ThinkPad-X301.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome sushil.rangarajan@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=tkqBbe4CRE2mvTKBq1mJ">Confirm my account</a></p>
+Redirected to http://localhost:3000/
+Completed 302 Found in 2726ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-30 03:16:35 -0500
+  Processing by PagesController#home as HTML
+Rendered shared/_header.html.erb (4.9ms)
+Rendered devise/menu/_registration_items.html.erb (1.5ms)
+Rendered devise/menu/_login_items.html.erb (1.5ms)
+Rendered shared/_topbar.html.erb (19.6ms)
+Rendered shared/_side_bar.html.erb (1.6ms)
+Rendered shared/_notice_messages.html.erb (1.2ms)
+Rendered shared/_footer.html.erb (3.9ms)
+Rendered pages/home.html.erb within layouts/application (227.4ms)
+Completed 200 OK in 440ms (Views: 248.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=tkqBbe4CRE2mvTKBq1mJ" for 127.0.0.1 at 2011-11-30 03:17:25 -0500
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"tkqBbe4CRE2mvTKBq1mJ"}
+  [1m[36mUser Load (123.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'tkqBbe4CRE2mvTKBq1mJ' LIMIT 1[0m
+  [1m[35mAREL (2.8ms)[0m  UPDATE "users" SET "confirmation_token" = NULL, "confirmed_at" = '2011-11-30 08:17:26.359746', "updated_at" = '2011-11-30 08:17:26.360289' WHERE "users"."id" = 2
+  [1m[36mAREL (2.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2011-11-30 08:17:26.413303', "current_sign_in_at" = '2011-11-30 08:17:26.413303', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2011-11-30 08:17:26.413813' WHERE "users"."id" = 2[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 400ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-30 03:17:26 -0500
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (6.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE ("alerts".user_id = 2)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "transactions" WHERE ("transactions".user_id = 2)
+Rendered shared/_user_info.html.erb (44.9ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 2))[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 2))
+Rendered shared/_stats.html.erb (67.7ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "transactions" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 2))[0m
+Rendered shared/_feed.html.erb (2.4ms)
+Rendered shared/_header.html.erb (6.3ms)
+Rendered devise/menu/_registration_items.html.erb (1.4ms)
+Rendered devise/menu/_login_items.html.erb (1.3ms)
+Rendered shared/_topbar.html.erb (9.4ms)
+Rendered shared/_side_bar.html.erb (0.9ms)
+Rendered shared/_notice_messages.html.erb (1.1ms)
+Rendered shared/_footer.html.erb (1.4ms)
+Rendered pages/home.html.erb within layouts/application (170.9ms)
+Completed 200 OK in 629ms (Views: 180.5ms | ActiveRecord: 137.1ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/ashwin/Dropbox/Courses/WebAppDev/centlog_repo/centlog/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-30 03:20:33 -0500
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE ("alerts".user_id = 2)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "transactions" WHERE ("transactions".user_id = 2)
+Rendered shared/_user_info.html.erb (26.1ms)
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 2))[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 2))
+Rendered shared/_stats.html.erb (91.8ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "transactions" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 2))[0m
+Rendered shared/_feed.html.erb (2.6ms)
+Rendered shared/_header.html.erb (3.9ms)
+Rendered devise/menu/_registration_items.html.erb (1.2ms)
+Rendered devise/menu/_login_items.html.erb (1.1ms)
+Rendered shared/_topbar.html.erb (6.9ms)
+Rendered shared/_side_bar.html.erb (0.7ms)
+Rendered shared/_notice_messages.html.erb (0.9ms)
+Rendered shared/_footer.html.erb (2.0ms)
+Rendered pages/home.html.erb within layouts/application (158.2ms)
+Completed 200 OK in 378ms (Views: 164.5ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/users/sign_out" for 127.0.0.1 at 2011-11-30 03:20:36 -0500
+  Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/SRNDoLRNUrbUKqv8eGwjbyCdj29hj7fF6s6de6K9Ww="}
+  [1m[35mUser Load (3.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 282ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-30 03:20:37 -0500
+  Processing by PagesController#home as HTML
+Rendered shared/_header.html.erb (3.8ms)
+Rendered devise/menu/_registration_items.html.erb (1.2ms)
+Rendered devise/menu/_login_items.html.erb (1.2ms)
+Rendered shared/_topbar.html.erb (6.1ms)
+Rendered shared/_side_bar.html.erb (1.5ms)
+Rendered shared/_notice_messages.html.erb (1.1ms)
+Rendered shared/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 131ms (Views: 36.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2011-11-30 03:20:38 -0500
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.7ms)
+Rendered shared/_header.html.erb (4.1ms)
+Rendered devise/menu/_registration_items.html.erb (1.5ms)
+Rendered devise/menu/_login_items.html.erb (1.9ms)
+Rendered shared/_topbar.html.erb (13.4ms)
+Rendered shared/_side_bar.html.erb (1.5ms)
+Rendered shared/_notice_messages.html.erb (1.1ms)
+Rendered shared/_footer.html.erb (1.2ms)
+Rendered devise/registrations/new.html.erb within layouts/application (135.9ms)
+Completed 200 OK in 229ms (Views: 145.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-11-30 03:21:02 -0500
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d1zcmFpIGX3/15jVulmbxze103NRNUo+Tu3/18+u2vs=", "user"=>{"first_name"=>"Ashwin", "last_name"=>"Das", "email"=>"ashwin.das@sv.cmu.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'ashwin.das@sv.cmu.edu') LIMIT 1[0m
+  [1m[35mUser Load (2.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'SbDCVQUHzyvQgV7CWpXq' LIMIT 1
+  [1m[36mAREL (1.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at", "first_name", "last_name") VALUES ('ashwin.das@sv.cmu.edu', '$2a$10$LjUhFyjErwmc6gH5XmW8L.7cvhrCGFycci2.E8vS.IeU9FjFd2zBm', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 'SbDCVQUHzyvQgV7CWpXq', NULL, '2011-11-30 08:21:02.645979', '2011-11-30 08:21:02.646153', '2011-11-30 08:21:02.646153', 'Ashwin', 'Das')[0m
+Rendered devise/mailer/confirmation_instructions.html.erb (1.2ms)
+
+Sent mail to ashwin.das@sv.cmu.edu (1603ms)
+Date: Wed, 30 Nov 2011 03:21:05 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ashwin.das@sv.cmu.edu
+Message-ID: <4ed5e771ba1ef_56cf1e625345574d@ashwin-ThinkPad-X301.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome ashwin.das@sv.cmu.edu!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=SbDCVQUHzyvQgV7CWpXq">Confirm my account</a></p>
+Redirected to http://localhost:3000/
+Completed 302 Found in 5166ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-30 03:21:07 -0500
+  Processing by PagesController#home as HTML
+Rendered shared/_header.html.erb (4.7ms)
+Rendered devise/menu/_registration_items.html.erb (1.5ms)
+Rendered devise/menu/_login_items.html.erb (1.6ms)
+Rendered shared/_topbar.html.erb (7.9ms)
+Rendered shared/_side_bar.html.erb (1.5ms)
+Rendered shared/_notice_messages.html.erb (1.3ms)
+Rendered shared/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 83ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/ashwin/Dropbox/Courses/WebAppDev/centlog_repo/centlog/config/environment.rb:5)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (28.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (12.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20111113233042)
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[35mSQL (0.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111113233042')[0m
+Migrating to AddFirstnameLastnameToUsers (20111117150033)
+  [1m[35mSQL (0.7ms)[0m  ALTER TABLE "users" ADD "first_name" varchar(255)
+  [1m[36mSQL (0.3ms)[0m  [1mALTER TABLE "users" ADD "last_name" varchar(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111117150033')
+Migrating to CreateGroups (20111119182107)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "owner_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111119182107')
+Migrating to AddGroupsUsersJoinTable (20111119182444)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "groups_users" ("group_id" integer, "user_id" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111119182444')
+Migrating to AddGroupNameUniquenessIndex (20111119182535)
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("groups")[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE UNIQUE INDEX "index_groups_on_name" ON "groups" ("name")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111119182535')[0m
+Migrating to CreateTransactions (20111124000154)
+  [1m[35mSQL (0.6ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "amount" float, "date" date, "location" varchar(255), "description" varchar(255), "tag" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("transactions")[0m
+  [1m[35mSQL (0.2ms)[0m  CREATE INDEX "index_transactions_on_user_id_and_date" ON "transactions" ("user_id", "date")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111124000154')[0m
+Migrating to CreateAlerts (20111128070654)
+  [1m[35mSQL (0.5ms)[0m  CREATE TABLE "alerts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "amount" float, "date" date, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111128070654')[0m
+Migrating to AddUserIdToAlerts (20111128071320)
+  [1m[35mSQL (0.6ms)[0m  ALTER TABLE "alerts" ADD "user_id" integer
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111128071320')[0m
+Migrating to CreateRelationships (20111129053946)
+  [1m[35mSQL (0.5ms)[0m  CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.3ms)[0m  CREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_follower_id')
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE INDEX "index_relationships_on_followed_id" ON "relationships" ("followed_id")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_follower_id')
+  [1m[36mSQL (1.1ms)[0m  [1mCREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followed_id" ON "relationships" ("follower_id", "followed_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111129053946')
+Migrating to AddConfirmableToDevise (20111130080826)
+  [1m[36mSQL (0.2ms)[0m  [1mALTER TABLE "users" ADD "confirmation_token" varchar(255)[0m
+SQLite3::SQLException: duplicate column name: confirmation_token: ALTER TABLE "users" ADD "confirmation_token" varchar(255)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/ashwin/Dropbox/Courses/WebAppDev/centlog_repo/centlog/config/environment.rb:5)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2011-11-30 03:22:53 -0500
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.6ms)
+Rendered shared/_header.html.erb (3.7ms)
+Rendered devise/menu/_registration_items.html.erb (1.4ms)
+Rendered devise/menu/_login_items.html.erb (1.4ms)
+Rendered shared/_topbar.html.erb (6.6ms)
+Rendered shared/_side_bar.html.erb (1.4ms)
+Rendered shared/_notice_messages.html.erb (1.7ms)
+Rendered shared/_footer.html.erb (1.3ms)
+Rendered devise/registrations/new.html.erb within layouts/application (282.0ms)
+Completed 200 OK in 299ms (Views: 288.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-11-30 03:23:08 -0500
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d1zcmFpIGX3/15jVulmbxze103NRNUo+Tu3/18+u2vs=", "user"=>{"first_name"=>"Ashwin", "last_name"=>"Das", "email"=>"ashwindascg@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'ashwindascg@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'WkyxEULbK5qNNJPeupdQ' LIMIT 1[0m
+  [1m[35mAREL (9.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at", "first_name", "last_name") VALUES ('ashwindascg@gmail.com', '$2a$10$RmPAtCX6wTBa.xxEaeb3WugX3tjTN/fj1hkky7TqciCv.3244FVce', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 'WkyxEULbK5qNNJPeupdQ', NULL, '2011-11-30 08:23:09.160204', '2011-11-30 08:23:09.160380', '2011-11-30 08:23:09.160380', 'Ashwin', 'Das')
+Rendered devise/mailer/confirmation_instructions.html.erb (1.1ms)
+
+Sent mail to ashwindascg@gmail.com (1193ms)
+Date: Wed, 30 Nov 2011 03:23:12 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ashwindascg@gmail.com
+Message-ID: <4ed5e7f06fab4_58fe201c71c54558@ashwin-ThinkPad-X301.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome ashwindascg@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=WkyxEULbK5qNNJPeupdQ">Confirm my account</a></p>
+Redirected to http://localhost:3000/
+Completed 302 Found in 5006ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-30 03:23:13 -0500
+  Processing by PagesController#home as HTML
+Rendered shared/_header.html.erb (4.3ms)
+Rendered devise/menu/_registration_items.html.erb (1.4ms)
+Rendered devise/menu/_login_items.html.erb (1.3ms)
+Rendered shared/_topbar.html.erb (5.9ms)
+Rendered shared/_side_bar.html.erb (1.6ms)
+Rendered shared/_notice_messages.html.erb (1.1ms)
+Rendered shared/_footer.html.erb (1.4ms)
+Rendered pages/home.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 80ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=WkyxEULbK5qNNJPeupdQ" for 127.0.0.1 at 2011-11-30 03:23:34 -0500
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"WkyxEULbK5qNNJPeupdQ"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'WkyxEULbK5qNNJPeupdQ' LIMIT 1[0m
+  [1m[35mAREL (3.1ms)[0m  UPDATE "users" SET "confirmation_token" = NULL, "confirmed_at" = '2011-11-30 08:23:34.424133', "updated_at" = '2011-11-30 08:23:34.424566' WHERE "users"."id" = 1
+  [1m[36mAREL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2011-11-30 08:23:34.459903', "current_sign_in_at" = '2011-11-30 08:23:34.459903', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2011-11-30 08:23:34.460468' WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 368ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-30 03:23:34 -0500
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE ("alerts".user_id = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "transactions" WHERE ("transactions".user_id = 1)
+Rendered shared/_user_info.html.erb (21.0ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 1))[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 1))
+Rendered shared/_stats.html.erb (91.9ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "transactions" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 1))[0m
+Rendered shared/_feed.html.erb (4.2ms)
+Rendered shared/_header.html.erb (4.2ms)
+Rendered devise/menu/_registration_items.html.erb (1.1ms)
+Rendered devise/menu/_login_items.html.erb (7.4ms)
+Rendered shared/_topbar.html.erb (13.4ms)
+Rendered shared/_side_bar.html.erb (0.9ms)
+Rendered shared/_notice_messages.html.erb (4.2ms)
+Rendered shared/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (163.8ms)
+Completed 200 OK in 387ms (Views: 169.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-30 03:23:37 -0500
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE ("alerts".user_id = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "transactions" WHERE ("transactions".user_id = 1)
+Rendered shared/_user_info.html.erb (18.0ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 1))[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 1))
+Rendered shared/_stats.html.erb (35.8ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "transactions" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 1))[0m
+Rendered shared/_feed.html.erb (2.5ms)
+Rendered shared/_header.html.erb (3.8ms)
+Rendered devise/menu/_registration_items.html.erb (1.2ms)
+Rendered devise/menu/_login_items.html.erb (1.3ms)
+Rendered shared/_topbar.html.erb (6.9ms)
+Rendered shared/_side_bar.html.erb (1.5ms)
+Rendered shared/_notice_messages.html.erb (1.1ms)
+Rendered shared/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (96.3ms)
+Completed 200 OK in 270ms (Views: 102.6ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-30 03:23:48 -0500
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlert Load (0.3ms)[0m  [1mSELECT "alerts".* FROM "alerts" WHERE ("alerts".user_id = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "transactions" WHERE ("transactions".user_id = 1)
+Rendered shared/_user_info.html.erb (68.0ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 1))[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 1))
+Rendered shared/_stats.html.erb (44.1ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "transactions" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 1))[0m
+Rendered shared/_feed.html.erb (3.0ms)
+Rendered shared/_header.html.erb (4.1ms)
+Rendered devise/menu/_registration_items.html.erb (1.4ms)
+Rendered devise/menu/_login_items.html.erb (1.2ms)
+Rendered shared/_topbar.html.erb (7.2ms)
+Rendered shared/_side_bar.html.erb (0.7ms)
+Rendered shared/_notice_messages.html.erb (1.3ms)
+Rendered shared/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (144.8ms)
+Completed 200 OK in 366ms (Views: 150.7ms | ActiveRecord: 2.6ms)

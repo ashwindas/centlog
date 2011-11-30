@@ -1,8 +1,8 @@
 Centlog::Application.configure do
-  # Settings specified here will take precedence over those in config/application.rb
+# Settings specified here will take precedence over those in config/application.rb
 
-  # The production environment is meant for finished, "live" apps.
-  # Code is not reloaded between requests
+# The production environment is meant for finished, "live" apps.
+# Code is not reloaded between requests
   config.cache_classes = true
 
   # Full error reports are disabled and caching is turned on
@@ -46,4 +46,15 @@ Centlog::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.action_mailer.smtp_settings ={
+    :enable_starttls_auto => true,
+    :address            => 'smtp.gmail.com',
+    :port               => 587,
+    :tls                => true,
+    :domain             => 'gmail.com',
+    :authentication     => :plain,
+    :user_name          => "centlog.cmu",
+    :password           => 'cmuinims23'
+  }
 end
