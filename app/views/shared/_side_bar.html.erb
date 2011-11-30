@@ -40,4 +40,29 @@
 		
 	</div>
 </div>
+<%else%>
+<div class="sidebar" style="padding-top:100px;
+		padding-bottom:10px;
+		padding-right:25px;">
+	<div class="well">
+		<h5>Who we are</h5>
+		<ul>
+			<li>
+				<a href="/about">About</a>
+			</li>
+			<li>
+				<a href="/contact">Contact</a>
+			</li>
+		</ul>
+		<h5>Start here</h5>
+		<ul>
+			<li>
+				<a href="<%=new_user_session_path%>">Login</a>
+			</li>
+			<li>
+				<a href="<%=new_user_registration_path%>">Register</a>
+			</li>
+		</ul>
+	</div>
+</div>
 <%end%> 

@@ -52,24 +52,29 @@ class GroupsController < ApplicationController
       return
       end
     end
-    
-    
-    @total = 0
-    
-    @transactions = User.find(@group.owner_id).transactions
-    @members.each do |m|
-      temp = m.transactions.dup
-     @total += temp.sum('amount')
+
+    @user_ids = Array.new
+    @group.users.each do |u|
+      @user_ids << u.id
     end
-    
+    @user_ids <<  @group.owner_id
+
+    @transactions = Transaction.scoped(:conditions => ["user_id IN (?)", @user_ids ] )
+
     @total = @transactions.sum('amount')
-    
-    @transactions_paginated = @transactions.paginate(:page => params[:page], :per_page => 50)
+
+    @transactions_paginated = @transactions.paginate(:page => params[:page], :per_page => 20)
+
+    @pie_data = Hash.new
+    User.all.each do |u|
+      @pie_data[u.email] = u.transactions.sum('amount')
+    end
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @group }
     end
+
   end
 
   # GET /groups/new

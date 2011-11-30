@@ -9,7 +9,7 @@ class TransactionsController < ApplicationController
   # GET /transactions.xml
   def index
 
-    @transactions = current_user.transactions(:order => "created_at DESC")
+    @transactions = current_user.transactions(:order => "date DESC")
 
     @sub_title = "Showing all your expenses"
 
@@ -100,6 +100,14 @@ class TransactionsController < ApplicationController
   def new
     @transaction = Transaction.new
 
+    @transactions = current_user.transactions
+    #Code below is for calculating information for the Pie chart
+    @tag_set = Set.new
+
+    @transactions.each do |tran|
+      @tag_set << tran.tag
+    end
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @transaction }
@@ -109,6 +117,15 @@ class TransactionsController < ApplicationController
   # GET /transactions/1/edit
   def edit
     @transaction = Transaction.find(params[:id])
+
+    @transactions = current_user.transactions
+    #Code below is for calculating information for the Pie chart
+    @tag_set = Set.new
+
+    @transactions.each do |tran|
+      @tag_set << tran.tag
+    end
+
   end
 
   # POST /transactions

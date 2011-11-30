@@ -17,14 +17,19 @@
 	<%= f.hidden_field :user_id,  :value => current_user.id %>
 </div>
 <div class="field">
+	<%= f.label :description %>
+	<br />
+	<%= f.text_field :description %>
+</div>
+<div class="field">
 	<%= f.label :amount %>
 	<br />
 	<%= f.text_field :amount %>
 </div>
 <div class="field">
-	<%= f.label :date %>
+	<%= f.label :tag %>
 	<br />
-	<%= f.date_select :date %>
+	<%= f.text_field :tag %>
 </div>
 <div class="field">
 	<%= f.label :location %>
@@ -32,16 +37,37 @@
 	<%= f.text_field :location %>
 </div>
 <div class="field">
-	<%= f.label :description %>
+	<%= f.label :date %>
 	<br />
-	<%= f.text_field :description %>
-</div>
-<div class="field">
-	<%= f.label :tag %>
-	<br />
-	<%= f.text_field :tag %>
+	<%= f.date_select :date %>
 </div>
 <div class="actions">
 	<%= f.submit "Done",:class => "btn primary medium"%>
 </div>
 <% end %> 
+
+
+
+<script>
+	$(function() {
+		var availableTags = [
+		<%@tag_set.each do |t|%>
+		"<%=t%>",
+		<%end%>
+		"Gadgets",
+		"Food",
+		"House",
+		"Clothing",
+		"Misc",
+		"Transport",
+		"Insurance",
+		"Gifts",
+		"Phone",
+		"Internet/Cable TV"		
+		];
+		
+		$( "#transaction_tag" ).autocomplete({
+			source: availableTags
+		});
+	});
+</script>
